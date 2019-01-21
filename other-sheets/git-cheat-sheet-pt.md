@@ -6,6 +6,8 @@ Git Cheat Sheet Portuguese [![Awesome](https://cdn.rawgit.com/sindresorhus/aweso
 * [Arquivos de Configuração](#arquivos-de-configuração)
 * [Criar](#criar)
 * [Mudanças Locais](#mudanças-locais)
+* [Pesquisar](#pesquisar)
+* [Histórico de Commits](#histórico-de-commits)
 
 <hr>
 
@@ -194,3 +196,95 @@ $ git stash drop
 ```
 
 <hr>
+
+## Pesquisar
+
+##### Pesquisa de texto em todos os arquivos do diretório:
+```
+$ git grep "Hello"
+```
+
+##### Pesquisa de texto em qualquer versão:
+```
+$ git grep "Hello" v2.5
+```
+
+<hr>
+
+
+## Histórico de Commits
+
+##### Mostrar todos os commits, começando com o mais recente (ele mostrará o hash, as informações do autor, a data e o título do commit):
+```
+$ git log
+```
+
+##### Mostrar todos os commits (mostrará apenas o hash e a mensagem do commit):
+```
+$ git log --oneline
+```
+
+##### Mostrar todos os commits de um usuário específico:
+```
+$ git log --author="nome de usuário"
+```
+
+##### Mostrar alterações ao longo do tempo para um arquivo específico:
+```
+$ git log -p <arquivo>
+```
+
+##### Exibir commits que estão presentes somente no remote/branch no lado direito:
+```
+$ git log --oneline <origin/master>..<remote/master> --left-right
+```
+
+##### Quem mudou, o que e quando em &lt;arquivo&gt;:
+```
+$ git blame <file>
+```
+
+##### Mostrar log de referência:
+```
+$ git reflog show
+```
+
+##### Excluir log de referência:
+```
+$ git reflog delete
+```
+<hr>
+
+## Mover / Renomear
+
+##### Renomear um arquivo:
+
+Renomear Index.txt para Index.html
+
+```
+$ git mv Index.txt Index.html
+```
+
+<hr>
+
+## Ramos & Etiquetas
+
+##### Listar todas os ramos locais:
+```
+$ git branch
+```
+
+#### Listar ramos locais/remotos:
+```
+$ git branch -a
+```
+
+##### Listar todos os ramos remotos:
+```
+$ git branch -r
+```
+
+##### Mudar o ramo atual(HEAD branch):
+```
+$ git checkout <ramo>
+```
